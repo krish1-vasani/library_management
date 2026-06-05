@@ -59,13 +59,14 @@ WSGI_APPLICATION = 'librarymanagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'libmanage',
-        'USER': 'root',
-        'PASSWORD': 'Vkp@7990',
-        'HOST': 'localhost',
+        'NAME': 'libasrarydb',
+        'USER': 'admin',
+        'PASSWORD': 'Krish7990',
+        'HOST': 'libararydb.c720y4e4m8ot.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
