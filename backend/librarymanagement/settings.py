@@ -59,7 +59,7 @@ WSGI_APPLICATION = 'librarymanagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'libasrarydb',
+        'NAME': 'libararydb',
         'USER': 'admin',
         'PASSWORD': 'Krish7990',
         'HOST': 'libararydb.c720y4e4m8ot.ap-south-1.rds.amazonaws.com',
