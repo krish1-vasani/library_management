@@ -6,10 +6,8 @@ from django.urls import path
 from library import views
 
 urlpatterns = [
-    path('health/', views.health),
-]
-urlpatterns = [
     path('admin/', admin.site.urls),
+    path('health/', views.health, name='health'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', views.home_view),
 
