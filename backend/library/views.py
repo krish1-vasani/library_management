@@ -1,11 +1,28 @@
 from django.shortcuts import redirect, render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,JsonResponse
 from . import forms, models
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required, user_passes_test
 from datetime import date
 from django.core.mail import send_mail
 from django.conf import settings
+from django.db import connection
+
+def health(request):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")
+
+        return JsonResponse({
+            "status": "healthy",
+            "database": "connected"
+        })
+
+    except Exception as e:
+        return JsonResponse({
+            "status": "unhealthy",
+            "database": str(e)
+        }, status=500)
 
 
 def home_view(request):

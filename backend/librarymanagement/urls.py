@@ -2,7 +2,12 @@ from django.contrib import admin
 from django.urls import path, include          # fixed: removed deprecated conf.urls import
 from library import views
 from django.contrib.auth.views import LoginView, LogoutView
+from django.urls import path
+from . import views
 
+urlpatterns = [
+    path("health/", views.health, name="health"),
+]
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
