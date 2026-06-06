@@ -3,10 +3,10 @@ from django.urls import path, include          # fixed: removed deprecated conf.
 from library import views
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
-from . import views
+from library import views
 
 urlpatterns = [
-    path("health/", views.health, name="health"),
+    path('health/', views.health),
 ]
 urlpatterns = [
     path('admin/', admin.site.urls),
